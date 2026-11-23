@@ -25,6 +25,9 @@ ORDER BY region, industry, quarter_start;
 SELECT COUNT(*) AS row_count
 FROM semiconductor_course.production_quarterly;
 
+-- BSI 현황과 분기 생산지수가 모두 있는 기간을 비교한다.
+-- 이번 원본 기준 2019년 3분기~2026년 2분기다. BSI 전망은 정제본에 보관한다.
+-- 첫 비교 분기의 변화율은 JOIN 대상에 없는 2019년 2분기 생산지수를 사용한다.
 SELECT
     p.quarter_start,
     b.bsi AS actual_bsi,
